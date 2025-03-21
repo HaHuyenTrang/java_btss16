@@ -1,0 +1,41 @@
+1. Vòng lặp for
+✅ Khi nào nên dùng?
+Khi biết trước số lần lặp.
+Khi cần truy cập phần tử theo chỉ số (index).
+Khi cần cập nhật giá trị của biến lặp trong mỗi lần chạy.
+
+2. Vòng lặp foreach (enhanced for)
+✅ Khi nào nên dùng?
+Khi muốn duyệt qua toàn bộ các phần tử trong danh sách (Array, ArrayList, Set...).
+Khi không cần biết chỉ số (index) của phần tử.
+
+3. Vòng lặp while
+✅ Khi nào nên dùng?
+Khi không biết trước số lần lặp.
+Khi cần chạy vòng lặp đến khi một điều kiện cụ thể bị sai.
+
+4. Iterator
+✅ Khi nào nên dùng?
+Khi cần duyệt một Collection (ArrayList, HashSet, LinkedList, v.v.).
+Khi cần xoá phần tử trong lúc lặp (không gây lỗi ConcurrentModificationException).
+
+Nhanh nhất 🏆: for (chỉ số) > foreach > while > Iterator Chậm nhất
+
+1️⃣ Vòng lặp for (dùng chỉ số) - Nhanh nhất
+Khi duyệt mảng (Array), for là nhanh nhất vì truy cập trực tiếp vào bộ nhớ (O(1)).
+Nếu dùng ArrayList, vẫn nhanh hơn foreach một chút vì không cần Iterator nội bộ.
+
+2️⃣ Vòng lặp foreach - Hơi chậm hơn for
+Trong ArrayList, foreach sử dụng Iterator nội bộ, nên có chút chi phí phụ.
+Nhưng trên Set, foreach lại nhanh hơn for vì không có chỉ số.
+⏩ Tốt nhất khi duyệt Set, LinkedList, hoặc khi không cần chỉ số.
+
+3️⃣ Vòng lặp while - Chậm hơn for một chút
+Khi sử dụng với điều kiện đơn giản (i < n), tốc độ gần bằng for.
+Nhưng nếu điều kiện phức tạp (while (list.hasNext())), sẽ chậm hơn.
+⏩ Tốt nhất khi cần lặp đến khi một điều kiện nào đó thay đổi.
+
+4️⃣ Iterator - Chậm nhất nhưng an toàn khi xoá phần tử
+Iterator chậm nhất vì có cơ chế kiểm tra đồng bộ (ConcurrentModificationException).
+Dùng tốt khi cần xoá phần tử trong danh sách mà không bị lỗi.
+⏩ **Tốt nhất khi cần xoá phần tử trong danh sách khi đang lặp.
